@@ -1,6 +1,10 @@
 ﻿//IEnumerable<string> input = System.IO.File.ReadLines(@"input_test.txt");
+using System.Diagnostics;
 
 IEnumerable<string> input = System.IO.File.ReadLines(@"input.txt");
+
+Stopwatch w1 = new Stopwatch();
+w1.Start();
 
 long maxCalories = 0;
 long maxCaloriesElfIndex = 0;
@@ -36,4 +40,6 @@ Array.Sort(elfsCaloriesArray);
 Array.Reverse(elfsCaloriesArray);
 
 Console.WriteLine("Top Three Elfs Calories = " + (elfsCaloriesArray[0] + elfsCaloriesArray[1] + elfsCaloriesArray[2]));
+w1.Stop();
 
+Console.WriteLine("Elapsed Time = " + (w1.Elapsed.TotalMilliseconds));
